@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
+import messageReducer from "./message"
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    message: messageReducer,
+  },
 })
 
 export type AppDispatch = typeof store.dispatch

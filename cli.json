@@ -1,0 +1,8 @@
+{
+  "language": "typescript",
+  "framework": "react-native",
+  "sourceDir": "src",
+  "paths": {
+    "components": ["**/components", "layouts", "**/screens"]
+  }
+}
