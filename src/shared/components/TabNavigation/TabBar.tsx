@@ -1,12 +1,15 @@
 import React from "react"
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs"
-
+import Profile from "@icons/home.svg"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Pressable, View } from "react-native"
 import { getIcon } from "./getIcon"
+import { useDispatch } from "react-redux"
+import { setMessage } from "@shared/store/message"
 
 const TabBar = ({ state, navigation }: BottomTabBarProps) => {
   const { bottom } = useSafeAreaInsets()
+  const dispatch = useDispatch()
   return (
     <View
       style={{
@@ -25,6 +28,7 @@ const TabBar = ({ state, navigation }: BottomTabBarProps) => {
 
           const onPress = () => {
             navigation.navigate(route.name)
+            dispatch(setMessage(route.name))
           }
           return (
             <Pressable

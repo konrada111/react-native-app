@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import CartNavigator from "@shared/screens/Cart/Cart"
+import HomeNavigator from "@shared/screens/Home/navigator"
+import SearchNavigator from "@shared/screens/Search/navigator"
+import UsersNavigator from "@shared/screens/Users/navigator"
 
 import React from "react"
-import CartNavigator from "src/shared/screens/Cart"
-import HomeNavigator from "src/shared/screens/Home/navigator"
-import SearchNavigator from "src/shared/screens/Search/navigator"
-import UsersNavigator from "src/shared/screens/Users/navigator"
+
 import TabBar from "./TabBar"
 
 const TabNavigation = () => {
