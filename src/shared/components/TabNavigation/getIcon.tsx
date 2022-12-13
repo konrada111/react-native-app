@@ -7,13 +7,18 @@ import Profile from "@icons/profile.svg"
 export const getIcon = (name: string, color: string) => {
   const style = { width: 24, height: 24 }
 
+  const props = {
+    style,
+    color,
+  }
+
   if (name === "Home") {
-    return <Home style={style} color={color} />
+    return <Home {...props} />
   } else if (name === "Search") {
-    return <SearchCategory style={style} color={color} />
+    return <SearchCategory {...props} />
   } else if (name === "Cart") {
-    return <Camera style={style} color={color} />
+    return <Camera {...props} />
   } else {
-    return <Profile style={style} color={color} />
+    return <Profile {...props} />
   }
 }

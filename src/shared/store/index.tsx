@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
-import messageReducer from "./message"
+import layoutReducer from "./layout"
+import usersReducer from "@shared/screens/Users/redux/slice"
 
 export const store = configureStore({
   reducer: {
-    message: messageReducer,
+    layout: layoutReducer,
+    users: usersReducer,
   },
 })
 

@@ -1,11 +1,10 @@
 import React from "react"
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs"
-import Profile from "@icons/home.svg"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Pressable, View } from "react-native"
 import { getIcon } from "./getIcon"
 import { useDispatch } from "react-redux"
-import { setMessage } from "@shared/store/message"
+import { setHeader } from "@shared/store/layout"
 
 const TabBar = ({ state, navigation }: BottomTabBarProps) => {
   const { bottom } = useSafeAreaInsets()
@@ -17,6 +16,10 @@ const TabBar = ({ state, navigation }: BottomTabBarProps) => {
         backgroundColor: "white",
         shadowColor: "black",
         shadowRadius: 16,
+        shadowOffset: {
+          width: 0,
+          height: -15,
+        },
         shadowOpacity: 0.04,
         height: 56 + bottom,
         flexDirection: "row",
@@ -24,11 +27,11 @@ const TabBar = ({ state, navigation }: BottomTabBarProps) => {
       <>
         {state.routes.map((route, index) => {
           const isFocused = state.index === index
-          const color = isFocused ? "#165B38" : "#9E9E9E"
+          const color = isFocused ? "#62A1CB" : "#9E9E9E"
 
           const onPress = () => {
             navigation.navigate(route.name)
-            dispatch(setMessage(route.name))
+            dispatch(setHeader(route.name))
           }
           return (
             <Pressable
