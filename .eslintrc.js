@@ -8,7 +8,7 @@ module.exports = {
       node: {
         paths: ["src"],
         alias: {
-          src: "./src/*",
+          "@shared": "./src/shared/*",
         },
       },
     },
